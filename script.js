@@ -53,8 +53,11 @@ function createNewSketch(squareNum){
 }
 
 function changeResolution(){
+    let squareNum = prompt("how many squares, limit is 100 and should have an integer square root");
+    if(!sqaureNum)
+    return
     removeSquares();
-    let squareNum = prompt("how many squares, limit is 100 and should have an integer square root") 
+
     createNewSketch(squareNum);
     addHoverEffect();
 }
