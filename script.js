@@ -35,10 +35,10 @@ function removeSquares(){
 }
 
 function calculateSquareLength(squareNum){
-    return Math.sqrt(containerLength * containerLength / squareNum);
+    return (containerLength / squareNum);
 }
 function createSquares(squareNum,squareLength){
-    for(i=0; i<squareNum; i++){
+    for(i=0; i<(squareNum*squareNum); i++){
         let square = document.createElement('div');
         square.classList.add('square');
         square.style.height = squareLength;
@@ -53,8 +53,8 @@ function createNewSketch(squareNum){
 }
 
 function changeResolution(){
-    let squareNum = prompt("how many squares, limit is 100 and should have an integer square root");
-    if(!sqaureNum)
+    var squareNum = prompt("Enter number of squares per side, limit is 100 ");
+    if(!squareNum)
     return
     removeSquares();
 
