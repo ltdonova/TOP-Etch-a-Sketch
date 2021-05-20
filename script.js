@@ -3,6 +3,7 @@ var container = document.querySelector('.sketch-container');
 var squares;
 var button = document.querySelectorAll('.resButton');
 var containerLength = container.offsetHeight;
+var defaultLength = 16;
 
 function getRandomColor() {
     return Math.floor(Math.random()*16777215).toString(16);
@@ -66,7 +67,7 @@ function changeResolution(){
 button[0].addEventListener('click',changeResolution);
 
 window.onload = () => {
-    createSquares(16,calculateSquareLength(16));
+    createSquares(defaultLength,calculateSquareLength(defaultLength));
     addHoverEffect();
     
 };
