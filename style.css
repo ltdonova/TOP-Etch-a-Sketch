@@ -4,10 +4,11 @@ html{
 h3{
     /* width: 30; */
 }
-body{
+.flex{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center;
+    align-content: center; */
 }
 .sketch-container{
     display: flex;
@@ -19,8 +20,8 @@ body{
     margin: 0 40 0 40;
 }
 .square{
-    height: 50;
-    width: 50;
+    /* height: 50;
+    width: 50; */
     transition: .7s;
     /* border: 1px solid rgb(14, 13, 13); */
 

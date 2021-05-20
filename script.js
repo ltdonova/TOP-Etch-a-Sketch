@@ -2,6 +2,7 @@
 var container = document.querySelector('.sketch-container');
 var squares;
 var button = document.querySelectorAll('.resButton');
+var containerLength = container.offsetHeight;
 
 function getRandomColor() {
     return Math.floor(Math.random()*16777215).toString(16);
@@ -15,7 +16,7 @@ function hoverColorChange(){
 }
 
 function removeHoverColorChange(){
-    this.style.backgroundColor = 'white';
+    this.style.backgroundColor = "rgb(175, 204, 194)";
     // this.classList.remove('squareHover');
 
 }
@@ -34,7 +35,7 @@ function removeSquares(){
 }
 
 function calculateSquareLength(squareNum){
-    return Math.sqrt(40000 / squareNum);
+    return Math.sqrt(containerLength * containerLength / squareNum);
 }
 function createSquares(squareNum,squareLength){
     for(i=0; i<squareNum; i++){
@@ -53,7 +54,7 @@ function createNewSketch(squareNum){
 
 function changeResolution(){
     removeSquares();
-    let squareNum = prompt("how many squares, limit is 100") 
+    let squareNum = prompt("how many squares, limit is 100 and should have an integer square root") 
     createNewSketch(squareNum);
     addHoverEffect();
 }
@@ -62,7 +63,7 @@ function changeResolution(){
 button[0].addEventListener('click',changeResolution);
 
 window.onload = () => {
-    createSquares(16,50);
+    createSquares(16,calculateSquareLength(16));
     addHoverEffect();
     
 };
